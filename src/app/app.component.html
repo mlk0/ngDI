@@ -1,0 +1,71 @@
+<h1>
+  {{title}}
+</h1>
+<h2>
+  Greeting from the injected greeting service : {{greeting}}
+</h2>
+
+<div>
+  <p>Please donate, any amount would be appreshiated</p>
+  <button (click)="donate()">Donate</button>
+</div>
+<h2>
+  Thanks for your donation of : {{donatedAmount | currency:'USD':true}}
+</h2>
+
+<div>
+  <button (click)="getStockActionRecommendation()">Get Recommendation</button>
+  <p>The recommended action is : {{tradeActionRecommendation}}</p>
+</div>
+
+
+<div>
+  <button (click)="getWeatherPrognosis()">Check Weather</button>
+  <p>The weather will be : {{weatherConditions}}</p>
+</div>
+
+
+<div>
+
+  <p>Sample injected constant : {{theConstant}}</p>
+</div>
+
+
+
+<div>
+  <p>Sample injected text constant : {{theDatabaseServer | json}}</p>
+  <p>Sample injected object/any constant : {{defaultAreaConfig | json}}</p>
+</div>
+
+<div>
+  <button (click)="checkLiens()">Check Liens</button>
+  <div>
+
+    <p>All Canadian Liens</p>
+
+    <ul>
+      <li *ngFor="let lien of allCanadianLiens">{{lien}}</li>
+    </ul>
+
+  </div>
+
+
+  <div>
+
+    <p>All US Liens</p>
+
+    <ul>
+      <li *ngFor="let lien of allUsLiens">{{lien}}</li>
+    </ul>
+
+  </div>
+
+
+  <div>
+    <p>All Car Liens in Europe</p>
+    <ul>
+      <li *ngFor="let lien of euCarLiens">{{lien}}</li>
+    </ul>
+  </div>
+
+</div>
